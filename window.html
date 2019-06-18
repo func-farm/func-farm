@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        button {
+        height: 30px;
+        outline: none;
+      }
+      .ace_editor {
+     		border: 1px solid lightgray;
+     		margin: auto;
+     		height: 200px;
+     		width: 80%;
+     	}
+     	.scrollmargin {
+     		height: 80px;
+             text-align: center;
+         }
+         .salt-div {
+            float: right;
+            color: red;
+            font-weight: bold;
+        }
+
+        //body {
+	//   background-image:linear-gradient(to bottom, lightblue , white);
+        //}
+        //div#provider {
+	//   background-image:linear-gradient(to bottom, lightblue , white);
+        //}
+
+        div#headColor {
+	  background-image:linear-gradient(to bottom, lightblue , white);
+          height: 10%;
+          width: 110%;
+	  position: absolute;
+	  float: top;
+	  margin-top: -20px;
+	  margin-left: -10px;
+        }
+        
+	div#provider {
+	  background: none;
+	  position: relative;
+	  //margin-top: 20px;
+	  float: top;
+	}
+
+        div#provider-form {
+	  position: relative;
+            margin: 20px 0px;
+        }
+
+
+        ul#filelist {
+            clear: both;
+            width: 100%;
+            display: block;
+        }
+
+        ul#filelist li,li#addFile{
+            display: inline;
+            float: left;
+            padding: 10px;
+            border: 1px solid #e3e3e3;
+            cursor: pointer;
+        }
+        ul#filelist li:hover{
+            font-weight: bold;
+        }
+        ul#filelist li.active {
+            background: #efefef;
+        }
+        .editor-area {
+            display: block;
+            clear: both;
+        }
+        .ace_editor {
+            width: 100%;
+        }
+	
+	textarea#outbox {
+	    width: 100%;
+	    height: 120px;
+	}
+    </style>
+</head>
+
+<body>
+    <!--button id="changeColor"></button-->
+
+    <!--div class="salt-div">
+        <label>Enter your secret key:</label>
+        <input type="text" name="salt" id="salt" />
+        <button id="savesalt">Save</button>
+    </div-->
+    <div id="headColor"></div>
+
+    <!--label>Provider</label-->
+    <div id="provider">
+        <input type="radio" class="provider" id="aws" name="provider" value="aws">AWS
+        <!--input type="radio" class="provider" id="p1" name="provider" value="aws" checked="true">AWS<-->
+        <input type="radio" class="provider" id="openwhisk" name="provider" value="openwhisk">OpenWhisk
+        <input type="radio" class="provider" id="gcp" name="provider" value="gcp" disabled="disabled">GCP
+    </div>
+
+    <div id="provider-form">
+
+    </div>
+
+    <label>Name</label>
+    <div id="name">
+        <input type="text" id="funcName" value="random-ninja">
+    </div>
+
+    <label>Type</label>
+    <div id="type">
+        <!--input type="radio" id="t1" name="language" class="language" value="node" checked="true">NodeJS
+	<input type="radio" id="t2" name="language" class="language" value="python">Python-->
+    </div>
+
+    <label>Code</label>
+    <div id="code">
+        <ul id="filelist">
+        </ul>
+        <li id="addFile">Add New</li>
+
+        <div class="editor-area">
+            <textarea id="editor"></textarea>
+        </div>
+    </div>
+    <div id="handlerform"></div>
+
+    <div id="run">
+        <button id="run">Run</button>
+    </div>
+
+    <label>Output</label>
+    <div id="output">
+        <textarea id="outbox"></textarea>
+    </div>
+
+    <div id="share">
+        <button id="share" title="Coming soon!">Share</button>
+    </div>
+
+    <!--script src="interface.js"></script-->
+    <!--script src="window.js"></script-->
+    <!-- <script src="providers/aws-wrapper.js"></script> -->
+    <script src="providers/aes.js"></script>
+    <script src="lib/aws-sdk-2.283.1.min.js"></script>
+    <script src="window_bundle.js"></script>
+
+</body>
+
+</html>
