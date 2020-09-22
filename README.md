@@ -1,6 +1,6 @@
 # FuncFarm - Serverless browser extension
 
-[Func.Farm](http://func.farm/)  
+[Func.Farm](https://chrome.google.com/webstore/detail/funcfarm/pohdddempcllapaglglhajjgmfphhdfg)  
   
 FuncFarm allows users to quickly create serverless functions by right clicking on selected code snippets, and selecting "create serverless function".  
 Functions are saved in users account with a cloud provider of his choice (must provide credentials).  
